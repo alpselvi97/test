@@ -1,0 +1,58 @@
+package org.example;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Odev2 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        // Eğer kullanıcıdan herhangi bir veri almak istiyorsak Scanner class'ını kullanmamız gereklidir.Çünkü Scanner class'ı
+        // kullanıcıdan veri almamızı sağlar.
+        System.out.println("Lütfen kaç adet sınav notunu girmek istediğinizi belirtiniz.");
+
+        int girilenSinavNotuSayisi = input.nextInt();
+        // Burada ise kullanıcıdan kaç adet sınav notu girmesi gerektiğini belirttik.
+
+        int notlar[] = new int[girilenSinavNotuSayisi];
+        // Birden fazla sınav notu gireceğini düşünerek Array yapısını oluşturduk.
+        // Burada ama isterse ArrayList yapısını da oluşturabilirdik.
+
+
+
+        int sinavToplamlari = 0;
+        // Herhangi bir bağımsız bir integer değişkeni tanımladık.Değerini 0 girdik çünkü toplama da 0 etkisiz elemandır.
+
+        for (int i = 0; i < notlar.length; i++) {
+            System.out.println("Lütfen "+(i+1)+"."+"sınav notunu giriniz =");
+            notlar[i]=input.nextInt();
+            // Bu notu da kullanınıcın girmesini istedik.Yukarıda tanımladığımız Scanner classını kullanarak yaptık bunu da.
+            System.out.println((i+1)+".Sınav Notu = "+notlar[i]);
+            // Girilen notları hangi notu girdiğini ve notun kaç olduğunu belirterek yazdırdık.
+            sinavToplamlari = notlar[i]+sinavToplamlari;
+            // Yukarı da tanımladığımız sinavToplamlari değişkenini kullanarak notların toplamını bulduk ve döngüyü burada sonladırdık.
+        }
+
+        int sinavOrtalamasi = sinavToplamlari/girilenSinavNotuSayisi;
+        // Burada integar data type ını kullanarak yeni bir variable oluşturduk.
+        // Döngü de tanımladığımız toplamı girilen sınav not sayısına bölerek ortalamasını bulduk.
+
+
+        System.out.println(sinavOrtalamasi);
+        // Sınav ortalamasını yazdırdık.
+
+        if (sinavOrtalamasi>80){
+            System.out.println("Yüksek Puan");
+        }
+        /* if statements ile de sınav ortalaması>80 'den büyükse şartını ortaya koyarak
+         şartın oluşması halinde yazdırmasını istediğimiz kelimeleri yazdırdık.
+           else'i kullanmadık çünkü bize 80'den küçükse diye şartı belirtmediği için else'i kullanmamış olduk.
+        */
+
+
+
+
+
+
+
+    }
+}
